@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ระบบกรอกชื่อตามเลขพัสดุ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#" class="active">สแกนPDF</a>
+        <a href="./slipscan.html">สแกนสลิปเงิน</a>
+    </div>
+    <div class="container content">
+        <div class="form-container">
+            <h1>ระบบกรอกชื่อตามเลขพัสดุ</h1>
+            <form action="#">
+                <label for="crop-select">เลือก Platform:</label>
+                <select id="crop-select">
+                    <option value="shopee">เลขพัสดุ Shopee</option>
+                    <option value="lazada">เลขพัสดุ Lazada</option>
+                </select>
+
+                <label for="pdf-file-input" class="custom-file-label" id="pdf-file-label">
+                    เลือกไฟล์ PDF
+                    <input type="file" class="custom-file-input" id="pdf-file-input" accept="application/pdf">
+                </label>
+
+                <label for="excel-file-input" class="custom-file-label disabled" id="excel-file-label">
+                    เลือกไฟล์ Excel
+                    <input type="file" class="custom-file-input" id="excel-file-input" accept=".xlsx, .xls" disabled>
+                </label>
+
+                <button type="button" id="check-result-button" disabled>ตรวจสอบผล</button>
+            </form>
+            <button type="button" class="toggle-button" id="download-pdf-button" disabled>โหลดไฟล์ PDF ทั้งหมด</button>
+            <button type="button" class="toggle-button" id="toggle-all-button">ดู QRCode Images</button>
+            <button type="button" class="toggle-button" id="clear-results-button">เคลียข้อมูลทั้งหมด</button>
+        </div>
+        <div class="result-container" id="result-container">
+
+        </div>
+    </div>
+    <script src="./import/sweetalert2@11.js"></script>
+    <script src="./import/xlsx.full.min.js"></script>
+    <script src="./import/jspdf.umd.min.js"></script>
+    <script src="./import/jszip.min.js"></script>
+    <script src='./import/DecoderWorker.js'></script>
+    <script src='./import/exif.js'></script>
+    <script src='./import/BarcodeReader.js'></script>
+    <script src="./import/pdf.min.js"></script>
+    <script src="./qrcodelocation.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

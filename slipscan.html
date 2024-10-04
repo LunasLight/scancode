@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ตรวจสอบสลิปเงิน</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="slipscan.css">
+    
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="./index.html" >สแกนPDF</a>
+        <a href="#" class="active">สแกนสลิปเงิน</a>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1>ตรวจสอบสลิปเงิน</h1>
+            <p style="text-align: center;">รองรับธนาคาร (กสิกรไทย, กรุงไทย, กรุงศรี, ไทยพาณิชย์, กรุงเทพ, ออมสิน)</p>
+            <p style="text-align: center; color: red;">*ภาพที่ไม่ชัดมากเกินไปจะทำให้ตรวจสอบไม่ได้</p>
+            <p style="text-align: center; color: red;">*จำเป็นต้องใช้อินเทอร์เน็ตครั้งแรก ถ้าล้างแคชจำเป็นต้องเปิดอินเตอร์ในการโหลดข้อมูลอ่านภาพอีกครั้ง ถ้ากำลังประมวลผลนานเกิไปให้ทำการเปิดเน็ตดึงข้อมูลอ่านภาพ</p>
+            <label for="slipUpload" class="custom-file-label" id="slip-file-label">
+                เลือกสลิปเงิน
+                <input type="file" class="custom-file-input" id="slipUpload" accept="image/*" multiple>
+            </label>
+            <!-- <p id="progress"></p> -->
+            <ul id="amountList"></ul>
+            <button id="exportExcel" style="display: none;">ส่งออก Excel</button>
+            <div style="display: none;">
+                <h2 id="totalimg" style="margin-top: 20px;">สลิป:</h2>
+                <div id="upscaledImagesDiv"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./import/sweetalert2@11.js"></script>
+    <script src="./import/tesseract.min.js"></script>
+    <script src="./import/xlsx.full.min.js"></script>
+    <script src="./slipscan.js"></script>
+</body>
+
+</html>
